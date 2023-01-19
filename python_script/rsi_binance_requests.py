@@ -1,4 +1,3 @@
-from binance.client import Client
 import requests
 
 #calculate the rsi for a certain symbol
@@ -49,11 +48,13 @@ def statement_from_rsi(rsi):
         print("Your judgment is required. The RSI is in the middle of the range.")
     return None
 
-symbol = 'OCEANUSDT'
-interval = "15m"
-limit = 20
 
-rsi = rsi(symbol, interval, limit)
-print(rsi)
-statement_from_rsi(rsi)
+if __name__ == "__main__":
+    symbol = 'OCEANUSDT'
+    interval = "15m"
+    limit = 20
+
+    rsi = rsi(symbol, interval, limit)
+    print(rsi)
+    statement_from_rsi(rsi)
 

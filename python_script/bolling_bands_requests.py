@@ -21,14 +21,10 @@ def calculate_bolling_bands(symbol, interval):
     # Set timestamp as index
     df.set_index('timestamp', inplace=True)
 
-    bb = ta.volatility.BollingerBands(close=df["close"], window=21, window_dev=2)
+    bollingerBands = ta.volatility.BollingerBands(close=df["close"], window=21, window_dev=2)
+    
 
-    # Create new columns for the Bollinger Bands
-    df["bb_upper"] = bb.bollinger_hband()
-    df["bb_lower"] = bb.bollinger_lband()
-    df["bb_middle"] = bb.bollinger_mavg()
-
-    return float(bb.bollinger_lband()[-1]), float(bb.bollinger_mavg()[-1]), float(bb.bollinger_hband()[-1])
+    return float(bollingerBands.bollinger_lband()[-1]), float(bollingerBands.bollinger_mavg()[-1]), float(bollingerBands.bollinger_hband()[-1])
     
 def lower_bolling_band(symbol, interval):
 

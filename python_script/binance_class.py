@@ -56,7 +56,13 @@ class binance_user:
     def quantity_to_price(self, symbol, quantity):
         price = self.get_price(symbol = symbol)
         return round(price * quantity, 2)
+    def cash_to_quantity(self, symbol, cash):
+        price = self.get_price(symbol = symbol)
+        return round(cash / price, 2)
         
+    def quantity_of(self, symbol):
+        quantity = self.client.get_asset_balance(asset=symbol)
+        return float(quantity['free'])
     ## Stop Limit Order doesnt work yet
     def stop_limit_order(self, ticker, quantity, stop_price, price):
         order_stop_limit = self.client.create_order(
@@ -72,9 +78,10 @@ class binance_user:
 
         return order_stop_limit
 
-
-user123 = binance_user(api_key, secret_key)
-# print(simden_user.get_price('ETHBUSD'))
-# simden_user.order_market_buy('ETHBUSD', 0.02)
-# simden_user.limit_order('AGIXBUSD', 'BUY', 1000, 0.1)
-# simden_user.stop_limit_order('ETHBUSD', 0.01, 995, 1000)
+if __name__ == '__main__':
+    user123 = binance_user(api_key, secret_key)
+    print(user123.quantity_of('USDT'))
+    # print(simden_user.get_price('ETHBUSD'))
+    # simden_user.order_market_buy('ETHBUSD', 0.02)
+    # simden_user.limit_order('AGIXBUSD', 'BUY', 1000, 0.1)
+    # simden_user.stop_limit_order('ETHBUSD', 0.01, 995, 1000)
