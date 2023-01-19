@@ -1,8 +1,6 @@
 from binance.client import Client
 import requests
 
-
-
 #calculate the rsi for a certain symbol
 
 def rsi(symbol, interval, limit):

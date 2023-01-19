@@ -73,7 +73,7 @@ class binance_user:
         return order_stop_limit
 
 
-simden_user = binance_user(api_key, secret_key)
+user123 = binance_user(api_key, secret_key)
 # print(simden_user.get_price('ETHBUSD'))
 # simden_user.order_market_buy('ETHBUSD', 0.02)
 # simden_user.limit_order('AGIXBUSD', 'BUY', 1000, 0.1)

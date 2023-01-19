@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import ta
 
-def bolling_bands(symbol, interval):
+def calculate_bolling_bands(symbol, interval):
 
     url = f"https://api.binance.com/api/v3/klines?symbol={symbol}&interval={interval}"
 
@@ -29,6 +29,7 @@ def bolling_bands(symbol, interval):
     df["bb_middle"] = bb.bollinger_mavg()
 
     return float(bb.bollinger_lband()[-1]), float(bb.bollinger_mavg()[-1]), float(bb.bollinger_hband()[-1])
+    
 def lower_bolling_band(symbol, interval):
 
     url = f"https://api.binance.com/api/v3/klines?symbol={symbol}&interval={interval}"
