@@ -78,9 +78,10 @@ class binance_user:
 
         return order_stop_limit
 
+user123 = binance_user(api_key, secret_key)
+
 if __name__ == '__main__':
-    user123 = binance_user(api_key, secret_key)
-    print(user123.quantity_of('USDT'))
+    print(user123.quantity_of('AGIX'))
     # print(simden_user.get_price('ETHBUSD'))
     # simden_user.order_market_buy('ETHBUSD', 0.02)
     # simden_user.limit_order('AGIXBUSD', 'BUY', 1000, 0.1)

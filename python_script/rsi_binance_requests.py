@@ -2,7 +2,7 @@ import requests
 
 #calculate the rsi for a certain symbol
 
-def rsi(symbol, interval, limit):
+def calculate_rsi(symbol, interval, limit):
 
     # Get the historical price data for symbol from the Binance API
 
@@ -50,11 +50,11 @@ def statement_from_rsi(rsi):
 
 
 if __name__ == "__main__":
-    symbol = 'OCEANUSDT'
+    symbols = ['OCEANUSDT', 'GALAUSDT', 'AGIXBUSD', 'APTBUSD', 'SOLBUSD']
     interval = "15m"
     limit = 20
-
-    rsi = rsi(symbol, interval, limit)
-    print(rsi)
-    statement_from_rsi(rsi)
+    for symbol in symbols:
+        rsi_value = calculate_rsi(symbol, interval, limit)
+        print(rsi_value)
+        statement_from_rsi(rsi_value)
 
