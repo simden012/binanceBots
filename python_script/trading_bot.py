@@ -14,7 +14,7 @@ money_per_trade = 100
 count =0
 while True:
     btc_recent_pourcentage = analyze_btc_price()
-    if btc_recent_pourcentage < 1.5:
+    if btc_recent_pourcentage > -1.5:
         for symbol in symbols:
 
             klines = user123.client.get_klines(symbol = symbols[0], interval=interval)
