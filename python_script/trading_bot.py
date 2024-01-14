@@ -39,5 +39,5 @@ while True:
                 print(f"NOTHING to do for {symbol} with price at {round(current_price, 3)}$ and rsi at {round(rsi_value, 3)}")
     print("-----SLEEPING FOR 30 SECONDS-----")
     time.sleep(30)
-            
+
        

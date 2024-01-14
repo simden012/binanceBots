@@ -22,5 +22,5 @@ while True:
             print(f"NOTHING to do for {ticker} with price at {round(price, 3)}$")
 
     print("-----SLEEPING FOR 30 SECONDS-----")
-    time.sleep(45)
+    time.sleep(30)
     

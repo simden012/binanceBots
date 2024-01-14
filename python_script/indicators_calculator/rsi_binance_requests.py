@@ -39,22 +39,22 @@ def calculate_rsi(symbol, interval, limit):
 
     return rsi
 
-def statement_from_rsi(rsi):
+def statement_from_rsi(rsi, symbol):
     if rsi < 30:
-        print("The RSI is low, this is a good time to buy.")
+        print(f"The RSI is low, this is a good time to buy. for {symbol}")
     elif rsi > 70:
-        print("The RSI is high, this is a good time to sell.")
+        print(f"The RSI is high, this is a good time to sell. for {symbol}")
     else:
-        print("Your judgment is required. The RSI is in the middle of the range.")
+        print(f"Your judgment is required. The RSI is in the middle of the range. for {symbol}")
     return None
 
 
 if __name__ == "__main__":
     symbols = ['OCEANUSDT', 'GALAUSDT', 'AGIXBUSD', 'APTBUSD', 'SOLBUSD']
-    interval = "15m"
+    interval = "1d"
     limit = 20
     for symbol in symbols:
         rsi_value = calculate_rsi(symbol, interval, limit)
         print(rsi_value)
-        statement_from_rsi(rsi_value)
+        statement_from_rsi(rsi_value, symbol)
 
