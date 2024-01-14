@@ -41,5 +41,7 @@ while True:
             else:
                 print(
                     f"NOTHING to do for {symbol} with price at {round(current_price, 3)}$ and rsi at {round(rsi_value, 3)}")
+        else:
+            print("SELL all positions")
     print("-----SLEEPING FOR 30 SECONDS-----")
     time.sleep(30)
